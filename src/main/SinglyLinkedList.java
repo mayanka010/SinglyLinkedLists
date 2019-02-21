@@ -8,8 +8,14 @@ public class SinglyLinkedList
     //method to insert a new node at the head
     public void insert(int value) {
         head = new Node(value,head);
+    }
+
+    public String toString()
+    {
+        return "";
 
     }
+
     private static class Node {
         private int data;
         private Node next;
