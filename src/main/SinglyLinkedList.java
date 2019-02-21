@@ -15,7 +15,7 @@ public class SinglyLinkedList
         StringBuilder result = new StringBuilder();
 
         Node temp = head;
-        System.out.println("[");
+        System.out.print("[");
         while(temp!=null)
         {
             result.append(temp.data);
@@ -48,8 +48,9 @@ public class SinglyLinkedList
     public static void main(String[] args)
     {
      SinglyLinkedList linkedList = new SinglyLinkedList();
-
-     linkedList.insert(30);
+        for (int i = 0; i < 5; i++) {
+            linkedList.insert(i + 1);
+        }
      System.out.println(linkedList);
 
 
