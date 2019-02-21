@@ -15,7 +15,7 @@ public class SinglyLinkedList
         StringBuilder result = new StringBuilder();
 
         Node temp = head;
-
+        System.out.println("[");
         while(temp!=null)
         {
             result.append(temp.data);
@@ -26,7 +26,7 @@ public class SinglyLinkedList
             temp  = temp.next;
 
         }
-        return result.toString();
+        return result.append("]").toString();
 
     }
 
@@ -48,6 +48,9 @@ public class SinglyLinkedList
     public static void main(String[] args)
     {
      SinglyLinkedList linkedList = new SinglyLinkedList();
+
+     linkedList.insert(30);
+     System.out.println(linkedList);
 
 
     }
