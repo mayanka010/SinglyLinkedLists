@@ -11,6 +11,14 @@ public class SinglyLinkedList
         size++;
     }
 
+    //method to insert a new node after a node
+    public void insert(int value,Node node)
+    {
+        node.next = new Node(value,node.next);
+        size++;
+    }
+
+
     public String toString()
     {
         StringBuilder result = new StringBuilder();
@@ -52,6 +60,14 @@ public class SinglyLinkedList
         for (int i = 0; i < 5; i++) {
             linkedList.insert(i + 1);
         }
+        Node temp = linkedList.head;
+        while(temp!=null){
+            if(temp.data ==5)
+            {
+                linkedList.insert(42,temp);
+            }
+                temp = temp.next;
+                }
      System.out.println(linkedList);
 
 
