@@ -35,6 +35,7 @@ public class SinglyLinkedList
 
     }
 
+    //method to remove at head
     private int removeHead() {
         int response = -1;
         Node temp = this.head;
@@ -50,7 +51,37 @@ public class SinglyLinkedList
         }
         return response;
     }
-
+        //method to remove after any node
+        private int removeAfter(Node node)
+        {
+            int response = -1;
+            Node temp = node.next;
+            if(temp !=null) {
+                response = temp.data;
+                node.next=temp.next;
+                size--;
+            }
+            return response;
+        }
+        // method for removing
+        private int remove(int data)
+        {
+            int response=-1;
+            Node temp = this.head;
+            if(temp.data == data) {
+                response = removeHead();
+            }
+            else {
+                while(temp != null) {
+                    if(temp.data==data) {
+                        response = removeAfter(temp);
+                        break;
+                    }
+                    temp = temp.next;
+                }
+            }
+            return response;
+        }
 
 
 
@@ -96,16 +127,17 @@ public class SinglyLinkedList
         for (int i = 0; i < 5; i++) {
             linkedList.insert(i + 1);
         }
-        Node temp = linkedList.head;
-        while(temp!=null){
-            if(temp.data ==5)
-            {
-                linkedList.insert(42);
-            }
-                temp = temp.next;
-                }
+ //       Node temp = linkedList.head;
+//        while(temp!=null){
+//            if(temp.data ==5)
+//            {
+//                linkedList.insert(42);
+//            }
+//                temp = temp.next;
+//                }
      System.out.println(linkedList);
-
+        linkedList.remove(3);
+        System.out.println(linkedList);
 
     }
 }
