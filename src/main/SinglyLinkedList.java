@@ -6,17 +6,36 @@ public class SinglyLinkedList
     private int size=0;
 
     //method to insert a new node at the head
-    public void insert(int value) {
-        head = new Node(value,head);
+    private void insertHead(int value) {
+        this.head = new Node(value,this.head);
         size++;
     }
 
     //method to insert a new node after a node
-    public void insert(int value,Node node)
+    private void insertAfter(int value,Node node)
     {
         node.next = new Node(value,node.next);
         size++;
     }
+
+    //common method for insert
+    public void insert(int data)
+    {
+        if(head==null) {
+            insertHead(data);
+
+        }
+        else {
+            Node temp = this.head;
+            while(temp.next!=null) {
+                temp = temp.next;
+            }
+            insertAfter(data,temp);
+        }
+
+    }
+
+
 
 
     public String toString()
@@ -64,7 +83,7 @@ public class SinglyLinkedList
         while(temp!=null){
             if(temp.data ==5)
             {
-                linkedList.insert(42,temp);
+                linkedList.insert(42);
             }
                 temp = temp.next;
                 }
