@@ -35,6 +35,23 @@ public class SinglyLinkedList
 
     }
 
+    private int removeHead() {
+        int response = -1;
+        Node temp = this.head;
+        if (head != null) {
+            this.head = this.head.next;
+
+        }
+
+        if (temp != null) {
+            size--;
+            response = temp.data;
+
+        }
+        return response;
+    }
+
+
 
 
 
