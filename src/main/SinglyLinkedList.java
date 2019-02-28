@@ -72,8 +72,8 @@ public class SinglyLinkedList
                 response = removeHead();
             }
             else {
-                while(temp != null) {
-                    if(temp.data==data) {
+                while(temp.next != null) {
+                    if(temp.next.data==data) {
                         response = removeAfter(temp);
                         break;
                     }
