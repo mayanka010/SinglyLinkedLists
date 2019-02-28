@@ -82,8 +82,21 @@ public class SinglyLinkedList
             }
             return response;
         }
+        //method for searching
+    public boolean search(int data)
+    {
+    boolean response = false;
+    Node temp = this.head;
+    while(temp!=null) {
+        if(temp.data==data){
+            response = true;
+            break;
+        }
+        temp=temp.next;
+    }
+    return response;
 
-
+    }
 
 
     public String toString()
@@ -135,9 +148,12 @@ public class SinglyLinkedList
 //            }
 //                temp = temp.next;
 //                }
-     System.out.println(linkedList);
-        linkedList.remove(3);
+//     System.out.println(linkedList);
+//        linkedList.remove(3);
+//        System.out.println(linkedList);
+
         System.out.println(linkedList);
+        System.out.println(linkedList.search(5));
 
     }
 }
